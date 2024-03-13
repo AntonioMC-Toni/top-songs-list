@@ -16,17 +16,29 @@ struct SongListView: View {
                 ForEach(viewModel.clSongs) { song in
                     songRow(song: song)
                 }
+                if viewModel.clSongs.isEmpty{
+                    Text("No se han encontrado canciones para Chile")
+                        .foregroundStyle(.red)
+                }
             }
 
             Section(header: Text("Top 10 canciones de EEUU").font(.headline)) {
                 ForEach(viewModel.usSongs) { song in
                     songRow(song: song)
                 }
+                if viewModel.usSongs.isEmpty{
+                    Text("No se han encontrado canciones para EEUU")
+                        .foregroundStyle(.red)
+                }
             }
 
             Section(header: Text("Top 10 canciones de Suecia").font(.headline)) {
                 ForEach(viewModel.seSongs) { song in
                     songRow(song: song)
+                }
+                if viewModel.seSongs.isEmpty{
+                    Text("No se han encontrado canciones para Suecia")
+                        .foregroundStyle(.red)
                 }
             }
         }
