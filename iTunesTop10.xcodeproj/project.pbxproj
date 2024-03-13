@@ -11,6 +11,11 @@
 		D9A6A4A22BA12C7500008C09 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A6A4A12BA12C7500008C09 /* ContentView.swift */; };
 		D9A6A4A42BA12C7800008C09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9A6A4A32BA12C7800008C09 /* Assets.xcassets */; };
 		D9A6A4A72BA12C7800008C09 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9A6A4A62BA12C7800008C09 /* Preview Assets.xcassets */; };
+		D9A6A4B32BA12D1E00008C09 /* SongListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A6A4B22BA12D1E00008C09 /* SongListView.swift */; };
+		D9A6A4B52BA12D2900008C09 /* SongDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A6A4B42BA12D2900008C09 /* SongDetailView.swift */; };
+		D9A6A4B82BA130B500008C09 /* itunesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A6A4B72BA130B400008C09 /* itunesService.swift */; };
+		D9A6A4BA2BA130CE00008C09 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A6A4B92BA130CE00008C09 /* Song.swift */; };
+		D9A6A4BC2BA130FB00008C09 /* ItunesTopTenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A6A4BB2BA130FB00008C09 /* ItunesTopTenViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +24,11 @@
 		D9A6A4A12BA12C7500008C09 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D9A6A4A32BA12C7800008C09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9A6A4A62BA12C7800008C09 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D9A6A4B22BA12D1E00008C09 /* SongListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListView.swift; sourceTree = "<group>"; };
+		D9A6A4B42BA12D2900008C09 /* SongDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongDetailView.swift; sourceTree = "<group>"; };
+		D9A6A4B72BA130B400008C09 /* itunesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = itunesService.swift; sourceTree = "<group>"; };
+		D9A6A4B92BA130CE00008C09 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		D9A6A4BB2BA130FB00008C09 /* ItunesTopTenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItunesTopTenViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +63,10 @@
 			children = (
 				D9A6A49F2BA12C7500008C09 /* iTunesTop10App.swift */,
 				D9A6A4A12BA12C7500008C09 /* ContentView.swift */,
+				D9A6A4AF2BA12CE900008C09 /* Views */,
+				D9A6A4AE2BA12CCC00008C09 /* ViewModel */,
+				D9A6A4B62BA12D4F00008C09 /* Models */,
+				D9A6A4AD2BA12CBA00008C09 /* Service */,
 				D9A6A4A32BA12C7800008C09 /* Assets.xcassets */,
 				D9A6A4A52BA12C7800008C09 /* Preview Content */,
 			);
@@ -65,6 +79,39 @@
 				D9A6A4A62BA12C7800008C09 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D9A6A4AD2BA12CBA00008C09 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				D9A6A4B72BA130B400008C09 /* itunesService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		D9A6A4AE2BA12CCC00008C09 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D9A6A4BB2BA130FB00008C09 /* ItunesTopTenViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D9A6A4AF2BA12CE900008C09 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D9A6A4B22BA12D1E00008C09 /* SongListView.swift */,
+				D9A6A4B42BA12D2900008C09 /* SongDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D9A6A4B62BA12D4F00008C09 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D9A6A4B92BA130CE00008C09 /* Song.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +184,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9A6A4BA2BA130CE00008C09 /* Song.swift in Sources */,
+				D9A6A4B52BA12D2900008C09 /* SongDetailView.swift in Sources */,
 				D9A6A4A22BA12C7500008C09 /* ContentView.swift in Sources */,
 				D9A6A4A02BA12C7500008C09 /* iTunesTop10App.swift in Sources */,
+				D9A6A4B82BA130B500008C09 /* itunesService.swift in Sources */,
+				D9A6A4B32BA12D1E00008C09 /* SongListView.swift in Sources */,
+				D9A6A4BC2BA130FB00008C09 /* ItunesTopTenViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,16 +321,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iTunesTop10/Preview Content\"";
+				DEVELOPMENT_TEAM = 6FGTH362M2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -286,6 +342,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = test.iTunesTop10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -297,16 +354,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iTunesTop10/Preview Content\"";
+				DEVELOPMENT_TEAM = 6FGTH362M2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -314,6 +375,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = test.iTunesTop10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
