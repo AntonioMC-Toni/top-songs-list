@@ -11,8 +11,19 @@ struct ContentView: View {
     @StateObject var itunesViewModel = ItunesTopTenViewModel()
     
     var body: some View {
+        
         NavigationStack {
+            
             SongListView(viewModel: itunesViewModel)
+            Divider()
+            NavigationLink(destination: FavoriteSongsView(viewModel: itunesViewModel)) {
+                HStack{
+                    Image(systemName: "heart.fill")
+                    Text("Show Favorite Songs")
+                        .font(.title)
+                }
+                .padding(.top)
+            }
         }
     }
 }

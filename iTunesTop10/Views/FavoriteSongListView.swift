@@ -1,31 +1,18 @@
 //
-//  SongListView.swift
+//  FavoriteSongListView.swift
 //  iTunesTop10
 //
-//  Created by Antonio Madrid on 12-03-24.
+//  Created by Antonio Madrid on 13-03-24.
 //
-
 import SwiftUI
 
-struct SongListView: View {
+struct FavoriteSongsView: View {
     @ObservedObject var viewModel: ItunesTopTenViewModel
 
     var body: some View {
         List {
-            Section(header: Text("Top 10 canciones de Chile").font(.headline)) {
-                ForEach(viewModel.clSongs) { song in
-                    songRow(song: song)
-                }
-            }
-
-            Section(header: Text("Top 10 canciones de EEUU").font(.headline)) {
-                ForEach(viewModel.usSongs) { song in
-                    songRow(song: song)
-                }
-            }
-
-            Section(header: Text("Top 10 canciones de Suecia").font(.headline)) {
-                ForEach(viewModel.seSongs) { song in
+            Section(header: Text("Favorite Songs").font(.headline)) {
+                ForEach(viewModel.favoriteSongs) { song in
                     songRow(song: song)
                 }
             }
@@ -47,4 +34,3 @@ struct SongListView: View {
         }
     }
 }
-
