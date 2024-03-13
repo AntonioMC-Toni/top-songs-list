@@ -16,6 +16,7 @@
 		D9A6A4B82BA130B500008C09 /* itunesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A6A4B72BA130B400008C09 /* itunesService.swift */; };
 		D9A6A4BA2BA130CE00008C09 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A6A4B92BA130CE00008C09 /* Song.swift */; };
 		D9A6A4BC2BA130FB00008C09 /* ItunesTopTenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A6A4BB2BA130FB00008C09 /* ItunesTopTenViewModel.swift */; };
+		D9A6A4BE2BA1592000008C09 /* FavoriteSongListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A6A4BD2BA1592000008C09 /* FavoriteSongListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		D9A6A4B72BA130B400008C09 /* itunesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = itunesService.swift; sourceTree = "<group>"; };
 		D9A6A4B92BA130CE00008C09 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		D9A6A4BB2BA130FB00008C09 /* ItunesTopTenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItunesTopTenViewModel.swift; sourceTree = "<group>"; };
+		D9A6A4BD2BA1592000008C09 /* FavoriteSongListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSongListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			children = (
 				D9A6A4B22BA12D1E00008C09 /* SongListView.swift */,
 				D9A6A4B42BA12D2900008C09 /* SongDetailView.swift */,
+				D9A6A4BD2BA1592000008C09 /* FavoriteSongListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				D9A6A4BA2BA130CE00008C09 /* Song.swift in Sources */,
 				D9A6A4B52BA12D2900008C09 /* SongDetailView.swift in Sources */,
 				D9A6A4A22BA12C7500008C09 /* ContentView.swift in Sources */,
+				D9A6A4BE2BA1592000008C09 /* FavoriteSongListView.swift in Sources */,
 				D9A6A4A02BA12C7500008C09 /* iTunesTop10App.swift in Sources */,
 				D9A6A4B82BA130B500008C09 /* itunesService.swift in Sources */,
 				D9A6A4B32BA12D1E00008C09 /* SongListView.swift in Sources */,
