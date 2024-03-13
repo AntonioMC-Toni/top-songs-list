@@ -11,19 +11,27 @@ struct ResponseData: Decodable {
     let results: [Song]
 }
 
+enum ItunesServiceError: Error {
+    case urlError
+    case networkError(Error)
+    case decodingError(Error)
+}
+
 protocol ItunesServiceProtocol {
-    func fetchTopSongs(country: String, completion: @escaping ([Song]?) -> Void)
+    func fetchTopSongs(country: String, completion: @escaping (Result<[Song], ItunesServiceError>) -> Void)
 }
 
 class ItunesService: ItunesServiceProtocol {
-    func fetchTopSongs(country: String, completion: @escaping ([Song]?) -> Void) {
+    func fetchTopSongs(country: String, completion: @escaping (Result<[Song], ItunesServiceError>) -> Void) {
         let urlString = "https://itunes.apple.com/search?term=pop&country=\(country)&entity=song&limit=10"
-        guard let url = URL(string: urlString) else { return }
+        guard let url = URL(string: urlString) else {
+            completion(.failure(.urlError))
+            return
+        }
 
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
-                print("Failed to fetch data with error: ", error)
-                completion(nil)
+                completion(.failure(.networkError(error)))
                 return
             }
 
@@ -31,10 +39,9 @@ class ItunesService: ItunesServiceProtocol {
 
             do {
                 let responseData = try JSONDecoder().decode(ResponseData.self, from: data)
-                completion(responseData.results)
+                completion(.success(responseData.results))
             } catch let decodeError {
-                print("Failed to decode data: ", decodeError)
-                completion(nil)
+                completion(.failure(.decodingError(decodeError)))
             }
         }.resume()
     }

@@ -13,8 +13,14 @@ struct ContentView: View {
     var body: some View {
         
         NavigationStack {
-            
-            SongListView(viewModel: itunesViewModel)
+            if itunesViewModel.error != nil{
+                Text(itunesViewModel.error ?? "")
+                    .font(.title)
+                    .foregroundStyle(.red)
+            } else {
+                SongListView(viewModel: itunesViewModel)
+            }
+            Spacer()
             Divider()
             NavigationLink(destination: FavoriteSongsView(viewModel: itunesViewModel)) {
                 HStack{

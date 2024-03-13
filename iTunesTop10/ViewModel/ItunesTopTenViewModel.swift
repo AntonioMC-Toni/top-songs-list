@@ -34,29 +34,39 @@ class ItunesTopTenViewModel: ObservableObject {
     
     init(itunesService: ItunesServiceProtocol = ItunesService()) {
         self.itunesService = itunesService
-        fetchTopSongs(country: "cl") { [weak self] songs in
-            self?.clSongs = songs ?? []
-        }
-        fetchTopSongs(country: "us") { [weak self] songs in
-            self?.usSongs = songs ?? []
-        }
-        fetchTopSongs(country: "se") { [weak self] songs in
-            self?.seSongs = songs ?? []
-        }
+        fetchTopSongs(country: "cl")
+        fetchTopSongs(country: "us")
+        fetchTopSongs(country: "se")
         self.favoriteSongs = self.userFavoriteSongs
     }
     
-    private func fetchTopSongs(country: String, completion: @escaping ([Song]?) -> Void) {
-        itunesService.fetchTopSongs(country: country) { [weak self] songs in
+    @Published var error: String?
+    
+    private func fetchTopSongs(country: String) {
+        itunesService.fetchTopSongs(country: country) { [weak self] result in
             DispatchQueue.main.async {
-                completion(songs)
-                if let songs = songs {
+                switch result {
+                case .success(let songs):
                     print("\(country) songs:")
                     for song in songs {
                         print(song.description)
                     }
-                } else {
-                    print("\(country) songs: No songs found")
+                    if country == "cl" {
+                        self?.clSongs = songs
+                    } else if country == "us" {
+                        self?.usSongs = songs
+                    } else if country == "se" {
+                        self?.seSongs = songs
+                    }
+                case .failure(let error):
+                    switch error {
+                    case .urlError:
+                        self?.error = "Ha habido un error al hacer la petición al servidor de iTunes"
+                    case .networkError:
+                        self?.error = "Ha habido un error de red. Intente nuevamente"
+                    case .decodingError:
+                        self?.error = "Ha habido un error con la aplicación. Itente nuevamente"
+                    }
                 }
             }
         }

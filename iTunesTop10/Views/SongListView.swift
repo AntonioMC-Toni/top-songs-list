@@ -11,6 +11,7 @@ struct SongListView: View {
     @ObservedObject var viewModel: ItunesTopTenViewModel
 
     var body: some View {
+        
         List {
             Section(header: Text("Top 10 canciones de Chile").font(.headline)) {
                 ForEach(viewModel.clSongs) { song in
